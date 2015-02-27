@@ -20,6 +20,8 @@ router.get('/', function(req, res) {
 router.post('/add', function(req, res) {
 
   var merchant_id = req.body.merchant_id;
+  var bank_account = req.body.bank_account;
+  var bank_routing = req.body.bank_routing;
 
   var merchantAccountParams = {
     individual: {
@@ -36,24 +38,10 @@ router.post('/add', function(req, res) {
         postalCode: "60622"
       }
     },
-    business: {
-      legalName: "Jane's Ladders",
-      dbaName: "Jane's Ladders",
-      taxId: "98-7654321",
-      address: {
-        streetAddress: "111 Main St",
-        locality: "Chicago",
-        region: "IL",
-        postalCode: "60622"
-      }
-    },
     funding: {
-      descriptor: "Blue Ladders",
       destination: braintree.MerchantAccount.FundingDestination.Bank,
-      email: "funding@blueladders.com",
-      mobilePhone: "5555555555",
-      accountNumber: "1123581321",
-      routingNumber: "071101307"
+      accountNumber: bank_account,
+      routingNumber: bank_routing
     },
     tosAccepted: true,
     masterMerchantAccountId: "7dyhd98kg2tkwqtd",
