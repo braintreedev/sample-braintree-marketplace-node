@@ -1,0 +1,53 @@
+extends layout
+
+block content
+	div(class="container")
+		br
+		div(class="well")
+			h4 Add a sub-merchant (all other required fields are pre-filled with sample data)
+			form(method="post", action="/add")
+				div(class="form-group")
+					label(for="input_SubmerchantID") Sub Merchant ID
+					input(class="form-control" id="input_SubmerchantID" name="merchant_id" placeholder="Enter ID for Sub-merchant (e.g bt_dev_store)")
+				input(class="btn btn-primary" type="submit" value="Add Submerchant")
+
+	div(class="container")
+		div(class="well")
+			h4 Find a sub-merchant
+			form(method="get", action="/find")
+				div(class="form-group")
+					label(for="input_SubmerchantID") Sub Merchant ID
+					input(class="form-control" id="input_SubmerchantID" name="merchant_id" placeholder="Enter ID for Sub-merchant (e.g bt_dev_store)")
+				input(class="btn btn-primary" type="submit" value="Find Submerchant")
+
+	div(class="container")
+		div(class="well")
+			h4 Transaction with Service Fee
+			form(method="post", action="/process")
+				div(class="form-group")
+					label(for="input_merchantAccountID") Merchant ID
+					input(class="form-control" id="input_merchantAccountID" name="merchant_id" placeholder="Enter Merchant Account ID")
+
+				div(class="form-group")
+					label(for="input_serviceFee") Total Amount
+					div(class="input-group")
+						div(class="input-group-addon") $
+						input(type="text" class="form-control" id="input_serviceFee" name="total" placeholder="Amount")
+						div(class="input-group-addon") .00
+
+				div(class="form-group")
+					label(for="input_serviceFee") Service Fee (will be deducted from total)
+					div(class="input-group")
+						div(class="input-group-addon") $
+						input(type="text" class="form-control" id="input_serviceFee" name="service" placeholder="Amount")
+						div(class="input-group-addon") .00
+
+				div(class="form-group")
+					#dropin
+				input#checkoutBtn(class="btn btn-primary" type="submit", value="Checkout")
+
+	script(src="/javascripts/braintree.js")
+	script.
+		braintree.setup("#{token}", "dropin", {
+			container: "dropin"
+		});

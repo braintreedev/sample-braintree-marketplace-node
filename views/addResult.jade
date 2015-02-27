@@ -1,0 +1,18 @@
+extends layout
+
+block content
+	div(class="container")
+		div(class="row")
+			if result.success
+				- var strResult = JSON.stringify(result.merchantAccount, null, 3);
+
+				h1 Sub Merchant account request has been submitted.  
+				br
+				h3 In Sandbox environment, this will be approved almost immediately.  Check Control Panel or use the Find feature of this sample to look up the sub merchant account.
+				br
+				h2 Braintree::MerchantAccount
+				pre #{strResult}
+			else
+				h1 Sub Merchant account request failed:
+				br
+				h2 #{result.message}

@@ -1,0 +1,14 @@
+extends layout
+
+block content
+	div(class="container")
+		div(class="row")
+			if result
+				- var strResult = JSON.stringify(result, null, 3);
+
+				h1 Found merchant account with id = #{merchant_id} 
+				br
+				h2 Braintree::MerchantAccount
+				pre #{strResult}
+			else
+				h1 Could not find merchant account with id = #{merchant_id}
