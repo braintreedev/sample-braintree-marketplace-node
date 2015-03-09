@@ -41,6 +41,11 @@ This demo uses
 	* Click Checkout
 * You will receive a message that says "Success" or "Failed" for each function
 
+## Running the test
+
+* Requirement: [CasperJS](http://casperjs.org/) 1.9.8+
+* Run `npm test` to start the test
+
 ## Useful links
 
 * [The Braintree Node.js SDK](https://developers.braintreepayments.com/javascript+node/sdk/server/overview)
