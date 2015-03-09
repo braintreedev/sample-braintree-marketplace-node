@@ -5,7 +5,7 @@ block content
 		br
 		div(class="well")
 			h4 Add a sub-merchant (all other required fields are pre-filled with sample data)
-			form(method="post", action="/add")
+			form(id="addForm" method="post", action="/add")
 				div(class="form-group")
 					label(for="input_SubmerchantID") Sub Merchant ID
 					input(class="form-control" id="input_SubmerchantID" name="merchant_id" placeholder="Enter ID for Sub-merchant (e.g bt_dev_store)")
@@ -14,21 +14,21 @@ block content
 					input(class="form-control" id="input_bank_account" name="bank_account" value="1123581321")
 					label(for="input_bank_routing") Bank Routing Number
 					input(class="form-control" id="input_bank_routing" name="bank_routing" value="071101307")
-				input(class="btn btn-primary" type="submit" value="Add Submerchant")
+				input(id="submit" class="btn btn-primary" type="submit" value="Add Submerchant")
 
 	div(class="container")
 		div(class="well")
 			h4 Find a sub-merchant
-			form(method="get", action="/find")
+			form(id="findForm" method="get", action="/find")
 				div(class="form-group")
 					label(for="input_SubmerchantID") Sub Merchant ID
 					input(class="form-control" id="input_SubmerchantID" name="merchant_id" placeholder="Enter ID for Sub-merchant (e.g bt_dev_store)")
-				input(class="btn btn-primary" type="submit" value="Find Submerchant")
+				input(id="submit" class="btn btn-primary" type="submit" value="Find Submerchant")
 
 	div(class="container")
 		div(class="well")
 			h4 Transaction with Service Fee
-			form(method="post", action="/process")
+			form(id="processForm" method="post", action="/process")
 				div(class="form-group")
 					label(for="input_merchantAccountID") Merchant ID
 					input(class="form-control" id="input_merchantAccountID" name="merchant_id" placeholder="Enter Merchant Account ID")
