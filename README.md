@@ -1,7 +1,5 @@
 # Using the Braintree MarketPlace API in Node to create a transaction with service fees
 
-[![Build Status](https://travis-ci.org/commercefactory/braintree-marketplace-node.svg)](https://travis-ci.org/commercefactory/braintree-marketplace-node)
-
 This is an example of the Braintree Marketplace API using the official Node SDK in Express to create a transaction with service fees.
 
 This branch includes a lot of files for the purpose of testing. To see a simplified example please switch to the [simplified](https://github.com/commercefactory/braintree-marketplace-node/tree/simplified) branch.
