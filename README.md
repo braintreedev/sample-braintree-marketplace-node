@@ -1,3 +1,5 @@
+<h2>This repo is on a path to being archived, checkout our other resources in github.com/paypal</h2>
+
 # Using the Braintree MarketPlace API in Node to create a transaction with service fees
 
 This is an example of the Braintree Marketplace API using the official Node SDK in Express to create a transaction with service fees.
